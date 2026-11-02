@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { KontaktPas } from "@/components/Chrome";
 import { HeroSlideshow } from "@/components/HeroSlideshow";
+import { Schema } from "@/components/Schema";
 import { firma, fotky, postup, ukony } from "@/lib/site";
 
 export const metadata = {
@@ -101,6 +102,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <Schema />
 
       {/* Montáž: postup na vodorovné ose, která se při scrollu dokreslí */}
       <section className="border-y border-line bg-white">

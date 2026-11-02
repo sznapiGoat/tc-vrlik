@@ -7,6 +7,7 @@
   --color-line: #cfd4d6;
   --color-accent: #2c5f86;
   --color-accent-dark: #224a69;
+  --color-deep: #1d405b;
 
   --font-display: var(--font-franklin), Arial, sans-serif;
   --font-sans: var(--font-franklin), Arial, sans-serif;
@@ -89,6 +90,14 @@ body {
 
 /* Pohyb jen pro ty, kdo ho nevypnuli. Bez podpory view() se nic neschová. */
 @media (prefers-reduced-motion: no-preference) {
+  /* Schéma: proudění v trubkách, zpáteční větev teče opačně */
+  .flow {
+    animation: flow 1.4s linear infinite;
+  }
+  .flow-back {
+    animation-direction: reverse;
+  }
+
   .hero-in {
     animation: hero-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
   }
@@ -145,5 +154,11 @@ body {
 @keyframes axis-draw {
   from {
     transform: scaleX(0);
+  }
+}
+
+@keyframes flow {
+  to {
+    stroke-dashoffset: -22;
   }
 }

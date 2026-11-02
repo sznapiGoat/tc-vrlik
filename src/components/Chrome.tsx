@@ -6,9 +6,16 @@ export function Header() {
   return (
     <header className="border-b border-white/10 bg-ink text-white">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4 sm:px-8">
-        <Link href="/" className="leading-tight">
-          <span className="block font-display text-2xl font-bold">Vrlík</span>
-          <span className="block text-base text-white/60">tepelná čerpadla, Šenov</span>
+        <Link href="/" className="flex items-center gap-3 leading-tight">
+          <svg aria-hidden viewBox="0 0 32 32" className="size-10 shrink-0">
+            <rect width="32" height="32" rx="7" fill="#f1f2f0" />
+            <path d="M6.5 6.5h5.2l4.3 12.4 4.3-12.4h5.2L18.6 23h-5.2z" fill="#1b2124" />
+            <rect x="10" y="25.5" width="12" height="2" rx="1" fill="#2c5f86" />
+          </svg>
+          <span>
+            <span className="block font-display text-2xl font-extrabold tracking-tight">Vrlík</span>
+            <span className="block text-base text-white/60">tepelná čerpadla, Šenov</span>
+          </span>
         </Link>
         <nav aria-label="Hlavní" className="hidden items-center gap-8 text-lg md:flex">
           {navigace.map((n) => (
