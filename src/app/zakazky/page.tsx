@@ -19,14 +19,16 @@ function Galerie({ fotky }: { fotky: typeof venku }) {
     <div className="mt-8 columns-1 gap-5 sm:columns-2 lg:columns-3">
       {fotky.map((f) => (
         <figure key={f.src} className="mb-6 break-inside-avoid">
-          <Image
-            src={f.src}
-            alt={f.alt}
-            width={f.w}
-            height={f.h}
-            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-            className="w-full rounded-md"
-          />
+          <div className="reveal-photo overflow-hidden rounded-md">
+            <Image
+              src={f.src}
+              alt={f.alt}
+              width={f.w}
+              height={f.h}
+              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+              className="w-full"
+            />
+          </div>
           <figcaption className="mt-2 text-base text-muted">{f.popis}</figcaption>
         </figure>
       ))}
@@ -41,7 +43,7 @@ export default function Zakazky() {
         <Drobecky kroky={[{ href: "/zakazky", label: "Zakázky" }]} />
         <h1 className="mt-8 font-display text-[2.4rem] leading-[1.05] font-extrabold tracking-tight sm:text-6xl">Z mých zakázek</h1>
         <p className="mt-6 max-w-2xl text-xl text-muted sm:text-[1.375rem]">
-          Většina práce přichází na doporučení od lidí, kterým čerpadlo topí už roky.
+          Venkovní jednotky a technické místnosti z rodinných domů, kde jsem čerpadlo montoval.
         </p>
 
         <h2 className="mt-16 border-t-2 border-ink pt-5 font-display text-3xl font-bold">Venkovní jednotky</h2>

@@ -7,19 +7,19 @@ import { SITE_URL, fotky, postup } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Montáž tepelného čerpadla Fujitsu vzduch-voda",
   description:
-    "Návrh a montáž tepelných čerpadel Fujitsu vzduch-voda s hydromodulem pro rodinné domy v Šenově, Ostravě a okolí. Provoz do −2 , voda do topení až 6 .",
+    "Návrh a montáž tepelných čerpadel Fujitsu vzduch-voda s hydromodulem pro rodinné domy v Šenově, Ostravě a okolí. Provoz do −21 °C, voda do topení až 60 °C.",
   alternates: { canonical: "/montaz-tepelnych-cerpadel" },
 };
 
 
 const parametry = [
-  ["Venkovní teplota", "provoz až do −2 "],
-  ["Voda do topení", "až 5 , řada High Power až 6 "],
+  ["Venkovní teplota", "provoz až do −21 °C"],
+  ["Voda do topení", "až 55 °C, řada High Power až 60 °C"],
   ["Regulace výkonu", "invertor, výkon se plynule přizpůsobí potřebě"],
   ["Topné okruhy", "až tři, ekvitermní řízení podle venkovní teploty"],
   ["Teplá voda", "ohřev bojleru, na přání i bazénu"],
-  ["Záložní zdroj", "8 až 1  podle výkonu čerpadla"],
-  ["Výkony", "od 4 do 1  pro rodinné domy, větší sestavy až 5 "],
+  ["Záložní zdroj", "8 až 18 kW podle výkonu čerpadla"],
+  ["Výkony", "od 4 do 16 kW pro rodinné domy, větší sestavy až 50 kW"],
 ];
 
 export default function Montaz() {
