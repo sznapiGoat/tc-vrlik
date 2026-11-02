@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f1f2f0;
+  --color-ink: #1b2124;
+  --color-muted: #545e64;
+  --color-line: #cfd4d6;
+  --color-plate: #dfe3e5;
+  --color-copper: #a4502a;
+  --color-copper-dark: #86401f;
+
+  --font-display: var(--font-bitter), Georgia, serif;
+  --font-sans: var(--font-atkinson), system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 1.1875rem;
+  line-height: 1.6;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-copper);
+  outline-offset: 3px;
+}
+
+/* Výrobní štítek: nýty v rozích jako na typovém štítku jednotky */
+.plate {
+  background-image:
+    radial-gradient(circle at 14px 14px, #9aa3a8 3px, transparent 3.5px),
+    radial-gradient(circle at calc(100% - 14px) 14px, #9aa3a8 3px, transparent 3.5px),
+    radial-gradient(circle at 14px calc(100% - 14px), #9aa3a8 3px, transparent 3.5px),
+    radial-gradient(circle at calc(100% - 14px) calc(100% - 14px), #9aa3a8 3px, transparent 3.5px);
+}
