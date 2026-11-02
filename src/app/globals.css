@@ -29,3 +29,50 @@ body {
   outline-offset: 3px;
 }
 
+
+/* Hero slideshow: pomalé přiblížení fotky, směr se střídá (převzato z OKelectric) */
+.hero-slide--a {
+  animation: hero-kenburns-a 9s linear forwards;
+}
+
+.hero-slide--b {
+  animation: hero-kenburns-b 9s linear forwards;
+}
+
+.hero-slide--paused,
+.hero-progress--paused {
+  animation-play-state: paused;
+}
+
+@keyframes hero-kenburns-a {
+  from {
+    transform: scale(1.03) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.12) translate3d(-1.5%, -1%, 0);
+  }
+}
+
+@keyframes hero-kenburns-b {
+  from {
+    transform: scale(1.12) translate3d(1.5%, 0.5%, 0);
+  }
+  to {
+    transform: scale(1.03) translate3d(0, 0, 0);
+  }
+}
+
+.hero-progress {
+  width: 100%;
+  transform-origin: left;
+  animation: hero-progress linear forwards;
+}
+
+@keyframes hero-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}

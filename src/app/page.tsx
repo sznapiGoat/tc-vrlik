@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { KontaktPas } from "@/components/Chrome";
+import { HeroSlideshow } from "@/components/HeroSlideshow";
 import { firma, fotky } from "@/lib/site";
 
 export const metadata = {
@@ -19,11 +20,11 @@ const vyber = [fotky.uVchodu, fotky.zasobnik, fotky.fasada];
 export default function Home() {
   return (
     <>
-      <section className="bg-ink text-white">
-        <div className="grid md:min-h-[620px] md:grid-cols-[1.05fr_1fr]">
-          {/* levý okraj textu lícuje s kontejnerem max-w-6xl, fotka jde až k okraji okna */}
-          <div className="flex flex-col justify-center px-5 py-14 sm:px-8 md:py-20 md:pr-14 md:pl-[max(2rem,calc((100vw-72rem)/2+2rem))]">
-            <h1 className="font-display text-[2.75rem] leading-[1.02] font-extrabold tracking-tight sm:text-6xl lg:text-[4rem]">
+      <section className="relative isolate flex min-h-[calc(100svh-7.5rem)] flex-col overflow-hidden bg-ink text-white md:min-h-[min(calc(100svh-5.5rem),820px)]">
+        <HeroSlideshow />
+        <div className="relative z-[5] mx-auto flex w-full max-w-6xl flex-1 flex-col justify-end px-5 pt-40 pb-44 sm:px-8 md:pb-32 lg:justify-center lg:pt-24 lg:pb-36">
+          <div className="max-w-xl">
+            <h1 className="font-display text-[2.75rem] leading-[1.02] font-extrabold tracking-tight sm:text-6xl lg:text-[4.25rem]">
               Tepelná čerpadla Fujitsu v&nbsp;Šenově a&nbsp;okolí
             </h1>
             <p className="mt-7 max-w-lg text-xl text-white/75 sm:text-[1.375rem]">
@@ -44,20 +45,12 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="relative h-80 sm:h-[28rem] md:h-auto">
-            <Image
-              src={fotky.novostavba.src}
-              alt={fotky.novostavba.alt}
-              fill
-              priority
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover object-[42%_45%]"
-            />
-          </div>
         </div>
+      </section>
 
+      <section aria-label="Základní údaje" className="bg-ink text-white">
         <div className="border-t border-white/15">
-          <dl aria-label="Základní údaje" className="mx-auto grid max-w-6xl grid-cols-2 px-5 sm:px-8 lg:grid-cols-4">
+          <dl className="mx-auto grid max-w-6xl grid-cols-2 px-5 sm:px-8 lg:grid-cols-4">
             {stitek.map(([k, v], i) => (
               <div
                 key={k}
