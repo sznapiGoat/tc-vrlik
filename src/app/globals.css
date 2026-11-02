@@ -76,3 +76,95 @@ body {
     transform: scaleX(1);
   }
 }
+
+/* Odkaz s podtržením, které se při najetí protáhne */
+.link-grow {
+  background: linear-gradient(currentColor, currentColor) 0 100% / 2.5rem 2px no-repeat;
+  padding-bottom: 4px;
+  transition: background-size 0.35s ease;
+}
+.link-grow:hover {
+  background-size: 100% 2px;
+}
+
+/* Pohyb jen pro ty, kdo ho nevypnuli. Bez podpory view() se nic neschová. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-in {
+    animation: hero-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .hero-in-2 {
+    animation-delay: 0.15s;
+  }
+  .hero-in-3 {
+    animation-delay: 0.3s;
+  }
+
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal-up linear both;
+      animation-timeline: view();
+      animation-range: entry 5% entry 55%;
+    }
+    .reveal-photo {
+      animation: reveal-photo linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 70%;
+    }
+    .zoom-out {
+      animation: zoom-out linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 60%;
+    }
+    .row-slide {
+      animation: row-slide linear both;
+      animation-timeline: view();
+      animation-range: entry 10% entry 90%;
+    }
+    .axis-draw {
+      transform-origin: left;
+      animation: axis-draw linear both;
+      animation-timeline: view();
+      animation-range: entry 20% cover 45%;
+    }
+    .step-in {
+      animation: reveal-up linear both;
+      animation-timeline: view();
+      animation-range: entry calc(10% + var(--d, 0%)) entry calc(60% + var(--d, 0%));
+    }
+  }
+}
+
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+}
+@keyframes reveal-photo {
+  from {
+    opacity: 0;
+    clip-path: inset(12% 0 0 0);
+  }
+}
+@keyframes zoom-out {
+  from {
+    transform: scale(1.15);
+  }
+}
+@keyframes row-slide {
+  from {
+    opacity: 0;
+    transform: translateX(-28px);
+  }
+}
+@keyframes axis-draw {
+  from {
+    transform: scaleX(0);
+  }
+}

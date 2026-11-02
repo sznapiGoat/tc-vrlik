@@ -70,3 +70,20 @@ export const fotky: Record<string, Foto> = {
     popis: "Venkovní jednotka na kamenném podkladu",
   },
 };
+
+/** Co obnáší servis: úvod ukazuje názvy, /servis-tepelnych-cerpadel i popisy. */
+export const ukony = [
+  ["Prohlídka venkovní i vnitřní jednotky", "Zkontroluji chod kompresoru, ventilátoru a čidel a projdu historii chybových hlášení."],
+  ["Čištění výparníku a odtoku kondenzátu", "Zanesené lamely a zamrzlý odtok jsou častý důvod, proč čerpadlo v zimě slábne."],
+  ["Tlak v soustavě a expanzní nádoba", "Doplním vodu, ověřím pojistný ventil a tlak v expanzní nádobě."],
+  ["Nastavení regulace", "Upravím ekvitermní křivku podle domu, aby čerpadlo netopilo zbytečně a nebylo zima."],
+  ["Poruchy a výpadky", "Když čerpadlo hlásí chybu nebo přestane topit, zavolejte a domluvíme se, kdy přijedu."],
+];
+
+/** Postup montáže, sdílí úvod a /montaz-tepelnych-cerpadel. */
+export const postup = [
+  ["Prohlídka domu", "Přijedu, podívám se na dům, topení a místo pro venkovní jednotku."],
+  ["Návrh výkonu", "Výkon čerpadla navrhnu podle tepelných ztrát domu, ne od oka."],
+  ["Montáž a napojení", "Osadím venkovní jednotku a hydromodul, zapojím zásobník teplé vody a napojím čerpadlo na topení."],
+  ["Nastavení a předání", "Nastavím regulaci podle domu a ukážu, jak se čerpadlo ovládá."],
+];

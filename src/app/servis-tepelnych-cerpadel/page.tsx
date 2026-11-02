@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { KontaktPas } from "@/components/Chrome";
 import { Drobecky, JsonLd } from "@/components/Seo";
-import { SITE_URL, fotky } from "@/lib/site";
+import { SITE_URL, fotky, ukony } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Servis tepelných čerpadel Šenov, Ostrava",
@@ -12,13 +12,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/servis-tepelnych-cerpadel" },
 };
 
-const ukony = [
-  ["Prohlídka venkovní i vnitřní jednotky", "Zkontroluji chod kompresoru, ventilátoru a čidel a projdu historii chybových hlášení."],
-  ["Čištění výparníku a odtoku kondenzátu", "Zanesené lamely a zamrzlý odtok jsou častý důvod, proč čerpadlo v zimě slábne."],
-  ["Tlak v soustavě a expanzní nádoba", "Doplním vodu, ověřím pojistný ventil a tlak v expanzní nádobě."],
-  ["Nastavení regulace", "Upravím ekvitermní křivku podle domu, aby čerpadlo netopilo zbytečně a nebylo zima."],
-  ["Poruchy a výpadky", "Když čerpadlo hlásí chybu nebo přestane topit, zavolejte a domluvíme se, kdy přijedu."],
-];
 
 const dotazy = [
   {

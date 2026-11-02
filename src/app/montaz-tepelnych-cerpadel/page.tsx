@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { KontaktPas } from "@/components/Chrome";
 import { Drobecky, JsonLd } from "@/components/Seo";
-import { SITE_URL, fotky } from "@/lib/site";
+import { SITE_URL, fotky, postup } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Montáž tepelného čerpadla Fujitsu vzduch-voda",
@@ -11,12 +11,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/montaz-tepelnych-cerpadel" },
 };
 
-const postup = [
-  ["Prohlídka domu", "Přijedu, podívám se na dům, topení a místo pro venkovní jednotku."],
-  ["Návrh výkonu", "Výkon čerpadla navrhnu podle tepelných ztrát domu, ne od oka."],
-  ["Montáž a napojení", "Osadím venkovní jednotku a hydromodul, zapojím zásobník teplé vody a napojím čerpadlo na topení."],
-  ["Nastavení a předání", "Nastavím regulaci podle domu a ukážu, jak se čerpadlo ovládá."],
-];
 
 const parametry = [
   ["Venkovní teplota", "provoz až do −21 °C"],
