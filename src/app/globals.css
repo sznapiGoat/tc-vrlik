@@ -9,8 +9,8 @@
   --color-copper: #a4502a;
   --color-copper-dark: #86401f;
 
-  --font-display: var(--font-bitter), Georgia, serif;
-  --font-sans: var(--font-atkinson), system-ui, sans-serif;
+  --font-display: var(--font-franklin), Arial, sans-serif;
+  --font-sans: var(--font-franklin), Arial, sans-serif;
 }
 
 html {

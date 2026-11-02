@@ -21,7 +21,7 @@ export default function Home() {
     <>
       <section className="mx-auto grid max-w-6xl gap-10 px-5 pt-12 pb-16 sm:px-8 md:grid-cols-[1.1fr_1fr] md:items-center md:pt-20 md:pb-24">
         <div>
-          <h1 className="font-display text-[2.6rem] leading-[1.08] font-bold tracking-tight sm:text-6xl">
+          <h1 className="font-display text-[2.6rem] leading-[1.05] font-extrabold tracking-tight sm:text-6xl">
             Tepelná čerpadla Fujitsu v&nbsp;Šenově a&nbsp;okolí
           </h1>
           <p className="mt-6 max-w-xl text-xl text-muted sm:text-[1.375rem]">
@@ -30,7 +30,7 @@ export default function Home() {
           <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
             <a
               href={firma.telHref}
-              className="inline-flex items-center justify-center rounded-md bg-copper px-8 py-5 font-display text-2xl font-bold text-white hover:bg-copper-dark"
+              className="hidden items-center justify-center rounded-md bg-copper px-8 py-5 sm:inline-flex font-display text-2xl font-bold text-white hover:bg-copper-dark"
             >
               Zavolat {firma.tel}
             </a>
@@ -58,7 +58,7 @@ export default function Home() {
           <dl className="grid gap-x-10 gap-y-5 sm:grid-cols-2 lg:grid-cols-4">
             {stitek.map(([k, v]) => (
               <div key={k} className="border-t border-[#b9c0c4] pt-3">
-                <dt className="font-mono text-sm tracking-wide text-muted uppercase">{k}</dt>
+                <dt className="text-base font-semibold text-muted">{k}</dt>
                 <dd className="mt-1 font-display text-2xl font-semibold">{v}</dd>
               </div>
             ))}

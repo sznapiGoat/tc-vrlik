@@ -1,20 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { Bitter, Atkinson_Hyperlegible } from "next/font/google";
+import { Libre_Franklin } from "next/font/google";
 import { Header, Footer, MobilZavolat } from "@/components/Chrome";
 import { JsonLd, firmaSchema } from "@/components/Seo";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
-const bitter = Bitter({
-  variable: "--font-bitter",
+const franklin = Libre_Franklin({
+  variable: "--font-franklin",
   subsets: ["latin", "latin-ext"],
-  weight: ["500", "600", "700"],
-});
-
-const atkinson = Atkinson_Hyperlegible({
-  variable: "--font-atkinson",
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -39,7 +32,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="cs" className={`${bitter.variable} ${atkinson.variable} antialiased`}>
+    <html lang="cs" className={`${franklin.variable} antialiased`}>
       <body>
         <JsonLd data={firmaSchema} />
         <Header />

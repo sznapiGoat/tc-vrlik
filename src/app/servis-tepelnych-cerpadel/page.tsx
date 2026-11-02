@@ -46,7 +46,7 @@ export default function Servis() {
         <Drobecky kroky={[{ href: "/servis-tepelnych-cerpadel", label: "Servis" }]} />
         <div className="mt-8 grid gap-10 md:grid-cols-[1.2fr_1fr] md:items-end">
           <div>
-            <h1 className="font-display text-[2.4rem] leading-[1.1] font-bold tracking-tight sm:text-6xl">
+            <h1 className="font-display text-[2.4rem] leading-[1.05] font-extrabold tracking-tight sm:text-6xl">
               Servis tepelných čerpadel
             </h1>
             <p className="mt-6 max-w-xl text-xl text-muted sm:text-[1.375rem]">

@@ -41,7 +41,7 @@ export function KontaktPas({ nadpis = "Nejrychleji se domluvíme po telefonu" }:
         <h2 className="font-display text-3xl font-bold sm:text-4xl">{nadpis}</h2>
         <a
           href={firma.telHref}
-          className="mt-6 block font-display text-[3.25rem] leading-none font-bold tracking-tight underline decoration-copper decoration-4 underline-offset-[10px] sm:text-8xl"
+          className="mt-6 block font-display text-[3.25rem] leading-none font-extrabold tracking-tight underline decoration-copper decoration-4 underline-offset-[10px] sm:text-8xl"
         >
           {firma.tel}
         </a>

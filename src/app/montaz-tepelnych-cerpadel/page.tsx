@@ -33,7 +33,7 @@ export default function Montaz() {
     <>
       <section className="mx-auto max-w-6xl px-5 pt-10 pb-16 sm:px-8 md:pt-14 md:pb-20">
         <Drobecky kroky={[{ href: "/montaz-tepelnych-cerpadel", label: "Montáž" }]} />
-        <h1 className="mt-8 max-w-4xl font-display text-[2.4rem] leading-[1.1] font-bold tracking-tight sm:text-6xl">
+        <h1 className="mt-8 max-w-4xl font-display text-[2.4rem] leading-[1.05] font-extrabold tracking-tight sm:text-6xl">
           Montáž tepelného čerpadla Fujitsu vzduch-voda
         </h1>
         <p className="mt-6 max-w-2xl text-xl text-muted sm:text-[1.375rem]">
@@ -84,7 +84,7 @@ export default function Montaz() {
           <tbody>
             {parametry.map(([k, v]) => (
               <tr key={k} className="border-t border-line align-top last:border-b">
-                <th scope="row" className="w-[38%] py-4 pr-4 font-mono text-sm font-normal tracking-wide text-muted uppercase">
+                <th scope="row" className="w-[38%] py-4 pr-4 text-base font-semibold text-muted">
                   {k}
                 </th>
                 <td className="py-4 text-lg">{v}</td>

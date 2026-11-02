@@ -39,7 +39,7 @@ export default function Zakazky() {
     <>
       <section className="mx-auto max-w-6xl px-5 pt-10 pb-20 sm:px-8 md:pt-14 md:pb-28">
         <Drobecky kroky={[{ href: "/zakazky", label: "Zakázky" }]} />
-        <h1 className="mt-8 font-display text-[2.4rem] leading-[1.1] font-bold tracking-tight sm:text-6xl">Z mých zakázek</h1>
+        <h1 className="mt-8 font-display text-[2.4rem] leading-[1.05] font-extrabold tracking-tight sm:text-6xl">Z mých zakázek</h1>
         <p className="mt-6 max-w-2xl text-xl text-muted sm:text-[1.375rem]">
           Většina práce přichází na doporučení od lidí, kterým čerpadlo topí už roky.
         </p>
