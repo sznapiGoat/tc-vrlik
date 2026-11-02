@@ -5,8 +5,8 @@
   --color-ink: #1b2124;
   --color-muted: #545e64;
   --color-line: #cfd4d6;
-  --color-accent: #c41e24;
-  --color-accent-dark: #a0171c;
+  --color-accent: #2c5f86;
+  --color-accent-dark: #224a69;
 
   --font-display: var(--font-franklin), Arial, sans-serif;
   --font-sans: var(--font-franklin), Arial, sans-serif;
@@ -110,16 +110,6 @@ body {
       animation-timeline: view();
       animation-range: entry 0% entry 70%;
     }
-    .zoom-out {
-      animation: zoom-out linear both;
-      animation-timeline: view();
-      animation-range: entry 0% cover 60%;
-    }
-    .row-slide {
-      animation: row-slide linear both;
-      animation-timeline: view();
-      animation-range: entry 10% entry 90%;
-    }
     .axis-draw {
       transform-origin: left;
       animation: axis-draw linear both;
@@ -143,24 +133,13 @@ body {
 @keyframes reveal-up {
   from {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(20px);
   }
 }
 @keyframes reveal-photo {
   from {
     opacity: 0;
-    clip-path: inset(12% 0 0 0);
-  }
-}
-@keyframes zoom-out {
-  from {
-    transform: scale(1.15);
-  }
-}
-@keyframes row-slide {
-  from {
-    opacity: 0;
-    transform: translateX(-28px);
+    clip-path: inset(6% 0 0 0);
   }
 }
 @keyframes axis-draw {

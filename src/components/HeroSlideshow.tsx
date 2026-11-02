@@ -123,7 +123,7 @@ export function HeroSlideshow() {
                     <span className="relative block h-[3px] overflow-hidden bg-white/25 group-hover:bg-white/45">
                       <span
                         key={current ? `on-${index}` : "off"}
-                        className={`absolute inset-y-0 left-0 bg-accent ${current ? (reduced ? "w-full" : "hero-progress") : "w-0"} ${current && !running ? "hero-progress--paused" : ""}`}
+                        className={`absolute inset-y-0 left-0 bg-white ${current ? (reduced ? "w-full" : "hero-progress") : "w-0"} ${current && !running ? "hero-progress--paused" : ""}`}
                         style={{ animationDuration: `${SLIDE_MS}ms` }}
                       />
                     </span>

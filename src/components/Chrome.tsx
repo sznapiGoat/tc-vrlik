@@ -36,34 +36,34 @@ export function Header() {
 
 export function KontaktPas({ nadpis = "Nejrychleji se domluvíme po telefonu" }: { nadpis?: string }) {
   return (
-    <section className="bg-accent text-white">
+    <section className="bg-ink text-white">
       <div className="mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:px-8 md:grid-cols-[1.5fr_1fr] md:items-end md:py-24">
         <div className="reveal">
           <h2 className="text-3xl font-bold sm:text-4xl">{nadpis}</h2>
           <a
             href={firma.telHref}
-            className="mt-6 block text-[3.25rem] leading-none font-extrabold tracking-tight underline decoration-white/40 decoration-4 underline-offset-[10px] transition-[text-decoration-color] hover:decoration-white sm:text-8xl"
+            className="mt-6 block text-[3.25rem] leading-none font-extrabold tracking-tight underline decoration-white/25 decoration-4 underline-offset-[10px] transition-[text-decoration-color] hover:decoration-white/70 sm:text-8xl"
           >
             {firma.tel}
           </a>
         </div>
-        <dl className="reveal grid gap-6 border-t border-white/30 pt-6 text-lg md:border-t-0 md:border-l md:pt-0 md:pl-10">
+        <dl className="reveal grid gap-6 border-t border-white/15 pt-6 text-lg md:border-t-0 md:border-l md:pt-0 md:pl-10">
           <div>
-            <dt className="text-white/75">E-mail</dt>
+            <dt className="text-white/60">E-mail</dt>
             <dd>
-              <a href={`mailto:${firma.email}`} className="font-semibold underline decoration-white/40 underline-offset-4 hover:decoration-white">
+              <a href={`mailto:${firma.email}`} className="font-semibold underline decoration-white/30 underline-offset-4 hover:decoration-white">
                 {firma.email}
               </a>
             </dd>
           </div>
           <div>
-            <dt className="text-white/75">Adresa</dt>
+            <dt className="text-white/60">Adresa</dt>
             <dd className="font-semibold">
               {firma.ulice}, {firma.psc} {firma.obec}
             </dd>
           </div>
           <div>
-            <dt className="text-white/75">Kde jezdím</dt>
+            <dt className="text-white/60">Kde jezdím</dt>
             <dd className="font-semibold">Šenov, Ostrava a okolí</dd>
           </div>
         </dl>

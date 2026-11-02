@@ -7,19 +7,19 @@ import { SITE_URL, fotky, postup } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Montáž tepelného čerpadla Fujitsu vzduch-voda",
   description:
-    "Návrh a montáž tepelných čerpadel Fujitsu vzduch-voda s hydromodulem pro rodinné domy v Šenově, Ostravě a okolí. Provoz do −21 °C, voda do topení až 60 °C.",
+    "Návrh a montáž tepelných čerpadel Fujitsu vzduch-voda s hydromodulem pro rodinné domy v Šenově, Ostravě a okolí. Provoz do −2 , voda do topení až 6 .",
   alternates: { canonical: "/montaz-tepelnych-cerpadel" },
 };
 
 
 const parametry = [
-  ["Venkovní teplota", "provoz až do −21 °C"],
-  ["Voda do topení", "až 55 °C, řada High Power až 60 °C"],
+  ["Venkovní teplota", "provoz až do −2 "],
+  ["Voda do topení", "až 5 , řada High Power až 6 "],
   ["Regulace výkonu", "invertor, výkon se plynule přizpůsobí potřebě"],
   ["Topné okruhy", "až tři, ekvitermní řízení podle venkovní teploty"],
   ["Teplá voda", "ohřev bojleru, na přání i bazénu"],
-  ["Záložní zdroj", "8 až 18 kW podle výkonu čerpadla"],
-  ["Výkony", "od 4 do 16 kW pro rodinné domy, větší sestavy až 50 kW"],
+  ["Záložní zdroj", "8 až 1  podle výkonu čerpadla"],
+  ["Výkony", "od 4 do 1  pro rodinné domy, větší sestavy až 5 "],
 ];
 
 export default function Montaz() {
@@ -73,19 +73,14 @@ export default function Montaz() {
 
       <section className="mx-auto max-w-4xl px-5 py-20 sm:px-8 md:py-24">
         <h2 className="font-display text-3xl font-bold sm:text-4xl">Co čerpadla Fujitsu umí</h2>
-        <table className="mt-8 w-full text-left">
-          <caption className="sr-only">Parametry tepelných čerpadel Fujitsu vzduch-voda</caption>
-          <tbody>
-            {parametry.map(([k, v]) => (
-              <tr key={k} className="border-t border-line align-top last:border-b">
-                <th scope="row" className="w-[38%] py-4 pr-4 text-base font-semibold text-muted">
-                  {k}
-                </th>
-                <td className="py-4 text-lg">{v}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <dl className="mt-10 grid gap-x-12 gap-y-9 border-t-2 border-ink pt-9 sm:grid-cols-2">
+          {parametry.map(([k, v]) => (
+            <div key={k}>
+              <dt className="text-base font-semibold text-muted">{k}</dt>
+              <dd className="mt-1 text-2xl leading-snug font-bold">{v}</dd>
+            </div>
+          ))}
+        </dl>
         <p className="mt-8 text-lg text-muted">
           K čerpadlu zapojím i zásobník na teplou vodu a napojím ho na stávající topení v domě.
         </p>

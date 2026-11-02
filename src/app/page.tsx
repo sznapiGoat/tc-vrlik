@@ -23,9 +23,10 @@ export default function Home() {
       <section className="relative isolate flex min-h-[calc(100svh-7.5rem)] flex-col overflow-hidden bg-ink text-white md:min-h-[min(calc(100svh-5.5rem),820px)]">
         <HeroSlideshow />
         <div className="relative z-[5] mx-auto flex w-full max-w-6xl flex-1 flex-col justify-end px-5 pt-40 pb-44 sm:px-8 md:pb-32 lg:justify-center lg:pt-24 lg:pb-36">
-          <div className="max-w-xl">
-            <h1 className="hero-in font-display text-[2.75rem] leading-[1.02] font-extrabold tracking-tight sm:text-6xl lg:text-[4.25rem]">
-              Tepelná čerpadla Fujitsu v&nbsp;Šenově a&nbsp;okolí
+          <div className="max-w-3xl">
+            <h1 className="hero-in font-display text-[2.75rem] leading-[1.04] font-extrabold tracking-tight sm:text-6xl lg:text-[3.6rem]">
+              Tepelná čerpadla Fujitsu <br className="hidden lg:block" />
+              v&nbsp;Šenově a&nbsp;okolí
             </h1>
             <p className="hero-in hero-in-2 mt-7 max-w-lg text-xl text-white/75 sm:text-[1.375rem]">
               Servis, návrh a montáž čerpadel vzduch-voda. {firma.jmeno}, v oboru přes třicet let.
@@ -33,13 +34,13 @@ export default function Home() {
             <div className="hero-in hero-in-3 mt-10 flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-8">
               <a
                 href={firma.telHref}
-                className="hidden items-center justify-center rounded-md bg-accent px-8 py-5 font-display text-2xl font-bold text-white transition hover:-translate-y-0.5 hover:bg-accent-dark sm:inline-flex"
+                className="hidden items-center justify-center rounded-md bg-paper px-8 py-5 font-display text-2xl font-bold text-ink transition-colors hover:bg-white sm:inline-flex"
               >
                 Zavolat {firma.tel}
               </a>
               <a
                 href={`mailto:${firma.email}`}
-                className="text-lg text-white/85 underline decoration-white/30 underline-offset-4 hover:decoration-accent"
+                className="text-lg text-white/85 underline decoration-white/30 underline-offset-4 hover:decoration-white"
               >
                 {firma.email}
               </a>
@@ -74,7 +75,7 @@ export default function Home() {
               width={fotky.rozvody.w}
               height={fotky.rozvody.h}
               sizes="(min-width: 768px) 40vw, 100vw"
-              className="zoom-out aspect-[4/5] w-full object-cover"
+              className="aspect-[4/5] w-full object-cover"
             />
           </div>
           <div className="reveal">
@@ -86,7 +87,7 @@ export default function Home() {
             </p>
             <ul className="mt-9 border-t-2 border-ink">
               {ukony.map(([nazev]) => (
-                <li key={nazev} className="row-slide border-b border-line py-4 text-xl font-semibold">
+                <li key={nazev} className="border-b border-line py-4 text-xl font-semibold">
                   {nazev}
                 </li>
               ))}
@@ -104,11 +105,11 @@ export default function Home() {
       {/* Montáž: postup na vodorovné ose, která se při scrollu dokreslí */}
       <section className="border-y border-line bg-white">
         <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 md:py-28">
-          <div className="reveal grid gap-6 md:grid-cols-2 md:items-end">
+          <div className="reveal max-w-2xl">
             <h2 className="font-display text-4xl leading-[1.05] font-extrabold tracking-tight sm:text-5xl">
               Montáž nového čerpadla
             </h2>
-            <p className="text-xl text-muted">
+            <p className="mt-5 text-xl text-muted">
               Montuji Fujitsu vzduch-voda s hydromodulem, které zvládne topení i ohřev vody. Výkon navrhnu podle domu.
             </p>
           </div>
@@ -131,37 +132,35 @@ export default function Home() {
       {/* Osobně: mluvíte rovnou s ním */}
       <section className="mx-auto max-w-5xl px-5 py-24 sm:px-8 md:py-32">
         <p className="reveal font-display text-3xl leading-[1.25] font-bold tracking-tight sm:text-[2.6rem]">
-          V oboru jsem od roku {firma.odRoku} a většina práce ke mně přichází na doporučení.{" "}
-          <span className="text-muted">Když zavoláte, mluvíte rovnou se mnou, ne s dispečinkem.</span>
+          V oboru jsem od roku {firma.odRoku} a většina práce ke mně přichází na doporučení. Když zavoláte, mluvíte rovnou se mnou, ne s dispečinkem.
         </p>
         <p className="reveal mt-8 text-xl">
           {firma.jmeno}, {firma.obec}
         </p>
       </section>
 
-      {/* Zakázky: jedna velká fotka a dvě menší */}
-      <section className="bg-ink text-white">
+      {/* Zakázky: jedna velká fotka a dvě menší, popisky pod fotkami */}
+      <section className="border-t border-line bg-white">
         <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 md:py-28">
           <div className="reveal flex flex-wrap items-end justify-between gap-4">
             <h2 className="font-display text-4xl font-extrabold tracking-tight sm:text-5xl">Z mých zakázek</h2>
-            <Link href="/zakazky" className="link-grow text-xl font-bold">
+            <Link href="/zakazky" className="link-grow text-xl font-bold text-accent">
               Všechny fotky
             </Link>
           </div>
-          <div className="mt-12 grid auto-rows-[260px] gap-4 sm:grid-cols-3 md:auto-rows-[300px]">
+          <div className="mt-12 grid gap-x-5 gap-y-8 sm:grid-cols-3">
             {vyber.map((f, i) => (
-              <figure
-                key={f.src}
-                className={`reveal-photo relative overflow-hidden rounded-md ${i === 0 ? "row-span-2 sm:col-span-2" : ""}`}
-              >
-                <Image
-                  src={f.src}
-                  alt={f.alt}
-                  fill
-                  sizes={i === 0 ? "(min-width: 640px) 66vw, 100vw" : "(min-width: 640px) 33vw, 100vw"}
-                  className="zoom-out object-cover"
-                />
-                <figcaption className="absolute bottom-3 left-3 rounded bg-ink/85 px-3 py-1.5 text-sm">{f.popis}</figcaption>
+              <figure key={f.src} className={i === 0 ? "sm:col-span-2 sm:row-span-2" : ""}>
+                <div className={`reveal-photo relative overflow-hidden rounded-md ${i === 0 ? "aspect-[4/3] sm:aspect-auto sm:h-[calc(100%-2.25rem)]" : "aspect-[4/3]"}`}>
+                  <Image
+                    src={f.src}
+                    alt={f.alt}
+                    fill
+                    sizes={i === 0 ? "(min-width: 640px) 66vw, 100vw" : "(min-width: 640px) 33vw, 100vw"}
+                    className="object-cover"
+                  />
+                </div>
+                <figcaption className="mt-2 text-base text-muted">{f.popis}</figcaption>
               </figure>
             ))}
           </div>
