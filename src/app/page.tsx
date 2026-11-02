@@ -19,47 +19,52 @@ const vyber = [fotky.uVchodu, fotky.zasobnik, fotky.fasada];
 export default function Home() {
   return (
     <>
-      <section className="mx-auto grid max-w-6xl gap-10 px-5 pt-12 pb-16 sm:px-8 md:grid-cols-[1.1fr_1fr] md:items-center md:pt-20 md:pb-24">
-        <div>
-          <h1 className="font-display text-[2.6rem] leading-[1.05] font-extrabold tracking-tight sm:text-6xl">
-            Tepelná čerpadla Fujitsu v&nbsp;Šenově a&nbsp;okolí
-          </h1>
-          <p className="mt-6 max-w-xl text-xl text-muted sm:text-[1.375rem]">
-            Servis, návrh a montáž čerpadel vzduch-voda. {firma.jmeno}, v oboru přes třicet let, od roku {firma.odRoku}.
-          </p>
-          <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <a
-              href={firma.telHref}
-              className="hidden items-center justify-center rounded-md bg-copper px-8 py-5 sm:inline-flex font-display text-2xl font-bold text-white hover:bg-copper-dark"
-            >
-              Zavolat {firma.tel}
-            </a>
-            <a href={`mailto:${firma.email}`} className="text-lg underline decoration-line underline-offset-4 hover:decoration-copper">
-              {firma.email}
-            </a>
+      <section className="bg-ink text-white">
+        <div className="grid md:min-h-[620px] md:grid-cols-[1.05fr_1fr]">
+          {/* levý okraj textu lícuje s kontejnerem max-w-6xl, fotka jde až k okraji okna */}
+          <div className="flex flex-col justify-center px-5 py-14 sm:px-8 md:py-20 md:pr-14 md:pl-[max(2rem,calc((100vw-72rem)/2+2rem))]">
+            <h1 className="font-display text-[2.75rem] leading-[1.02] font-extrabold tracking-tight sm:text-6xl lg:text-[4rem]">
+              Tepelná čerpadla Fujitsu v&nbsp;Šenově a&nbsp;okolí
+            </h1>
+            <p className="mt-7 max-w-lg text-xl text-white/75 sm:text-[1.375rem]">
+              Servis, návrh a montáž čerpadel vzduch-voda. {firma.jmeno}, v oboru přes třicet let.
+            </p>
+            <div className="mt-10 flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-8">
+              <a
+                href={firma.telHref}
+                className="hidden items-center justify-center rounded-md bg-accent px-8 py-5 font-display text-2xl font-bold text-white hover:bg-accent-dark sm:inline-flex"
+              >
+                Zavolat {firma.tel}
+              </a>
+              <a
+                href={`mailto:${firma.email}`}
+                className="text-lg text-white/85 underline decoration-white/30 underline-offset-4 hover:decoration-accent"
+              >
+                {firma.email}
+              </a>
+            </div>
+          </div>
+          <div className="relative h-80 sm:h-[28rem] md:h-auto">
+            <Image
+              src={fotky.novostavba.src}
+              alt={fotky.novostavba.alt}
+              fill
+              priority
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover object-[42%_45%]"
+            />
           </div>
         </div>
-        <figure>
-          <Image
-            src={fotky.novostavba.src}
-            alt={fotky.novostavba.alt}
-            width={fotky.novostavba.w}
-            height={fotky.novostavba.h}
-            priority
-            sizes="(min-width: 768px) 45vw, 100vw"
-            className="w-full rounded-md"
-          />
-          <figcaption className="mt-3 text-base text-muted">{fotky.novostavba.popis}.</figcaption>
-        </figure>
-      </section>
 
-      <section aria-label="Základní údaje" className="mx-auto max-w-6xl px-5 sm:px-8">
-        <div className="plate rounded-md border border-[#b9c0c4] bg-plate px-6 py-7 sm:px-10">
-          <dl className="grid gap-x-10 gap-y-5 sm:grid-cols-2 lg:grid-cols-4">
-            {stitek.map(([k, v]) => (
-              <div key={k} className="border-t border-[#b9c0c4] pt-3">
-                <dt className="text-base font-semibold text-muted">{k}</dt>
-                <dd className="mt-1 font-display text-2xl font-semibold">{v}</dd>
+        <div className="border-t border-white/15">
+          <dl aria-label="Základní údaje" className="mx-auto grid max-w-6xl grid-cols-2 px-5 sm:px-8 lg:grid-cols-4">
+            {stitek.map(([k, v], i) => (
+              <div
+                key={k}
+                className={`py-6 pr-4 ${i % 2 ? "border-l border-white/15 pl-5" : ""} ${i === 2 ? "border-t border-white/15 lg:border-t-0 lg:border-l lg:pl-5" : ""} ${i === 3 ? "border-t border-white/15 lg:border-t-0" : ""}`}
+              >
+                <dt className="text-base text-white/60">{k}</dt>
+                <dd className="mt-1 font-display text-xl font-bold sm:text-2xl">{v}</dd>
               </div>
             ))}
           </dl>
@@ -77,7 +82,7 @@ export default function Home() {
             </p>
             <Link
               href="/servis-tepelnych-cerpadel"
-              className="mt-6 inline-block font-display text-xl font-semibold text-copper underline underline-offset-4"
+              className="mt-6 inline-block font-display text-xl font-semibold text-accent underline underline-offset-4"
             >
               Co servis obnáší
             </Link>
@@ -87,7 +92,7 @@ export default function Home() {
             <p className="mt-4 text-lg text-muted">
               Návrh výkonu podle domu, montáž Fujitsu vzduch-voda s hydromodulem a napojení na topení a ohřev vody.
             </p>
-            <Link href="/montaz-tepelnych-cerpadel" className="mt-5 inline-block text-lg font-semibold text-copper underline underline-offset-4">
+            <Link href="/montaz-tepelnych-cerpadel" className="mt-5 inline-block text-lg font-semibold text-accent underline underline-offset-4">
               Jak montáž probíhá
             </Link>
           </div>
@@ -98,7 +103,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 md:py-24">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <h2 className="font-display text-3xl font-bold sm:text-4xl">Z mých zakázek</h2>
-            <Link href="/zakazky" className="text-lg font-semibold text-copper underline underline-offset-4">
+            <Link href="/zakazky" className="text-lg font-semibold text-accent underline underline-offset-4">
               Všechny fotky
             </Link>
           </div>

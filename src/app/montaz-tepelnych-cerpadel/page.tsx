@@ -46,10 +46,10 @@ export default function Montaz() {
         <div className="mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:px-8 md:grid-cols-2 md:py-24">
           <div>
             <h2 className="font-display text-3xl font-bold sm:text-4xl">Jak montáž probíhá</h2>
-            <ol className="mt-8 border-l-2 border-copper">
+            <ol className="mt-8 border-l-2 border-accent">
               {postup.map(([nazev, text]) => (
                 <li key={nazev} className="relative pb-8 pl-8 last:pb-0">
-                  <span aria-hidden className="absolute top-2 -left-[7px] size-3 rounded-full bg-copper" />
+                  <span aria-hidden className="absolute top-2 -left-[7px] size-3 rounded-full bg-accent" />
                   <h3 className="font-display text-2xl font-semibold">{nazev}</h3>
                   <p className="mt-1 text-muted">{text}</p>
                 </li>

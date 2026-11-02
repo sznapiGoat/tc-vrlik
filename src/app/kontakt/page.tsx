@@ -17,7 +17,7 @@ export default function Kontakt() {
 
       <a
         href={firma.telHref}
-        className="mt-10 block font-display text-[3.25rem] leading-none font-extrabold tracking-tight underline decoration-copper decoration-4 underline-offset-[10px] sm:text-8xl"
+        className="mt-10 block font-display text-[3.25rem] leading-none font-extrabold tracking-tight underline decoration-accent decoration-4 underline-offset-[10px] sm:text-8xl"
       >
         {firma.tel}
       </a>
@@ -26,7 +26,7 @@ export default function Kontakt() {
         <div>
           <dt className="text-base font-semibold text-muted">E-mail</dt>
           <dd className="mt-2 text-xl">
-            <a href={`mailto:${firma.email}`} className="underline decoration-line underline-offset-4 hover:decoration-copper">
+            <a href={`mailto:${firma.email}`} className="underline decoration-line underline-offset-4 hover:decoration-accent">
               {firma.email}
             </a>
           </dd>
@@ -41,7 +41,7 @@ export default function Kontakt() {
               <br />
               {firma.psc} {firma.obec}
             </address>
-            <a href={firma.mapa} className="mt-2 inline-block text-base text-copper underline underline-offset-4">
+            <a href={firma.mapa} className="mt-2 inline-block text-base text-accent underline underline-offset-4">
               Otevřít v mapě
             </a>
           </dd>

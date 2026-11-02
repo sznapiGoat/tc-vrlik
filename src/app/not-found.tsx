@@ -6,7 +6,7 @@ export default function NotFound() {
       <h1 className="font-display text-5xl font-bold">Stránka nenalezena</h1>
       <p className="mt-6 text-xl text-muted">
         Tahle stránka neexistuje. Pokračujte na{" "}
-        <Link href="/" className="text-copper underline underline-offset-4">
+        <Link href="/" className="text-accent underline underline-offset-4">
           úvod
         </Link>
         .

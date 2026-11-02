@@ -5,9 +5,8 @@
   --color-ink: #1b2124;
   --color-muted: #545e64;
   --color-line: #cfd4d6;
-  --color-plate: #dfe3e5;
-  --color-copper: #a4502a;
-  --color-copper-dark: #86401f;
+  --color-accent: #c41e24;
+  --color-accent-dark: #a0171c;
 
   --font-display: var(--font-franklin), Arial, sans-serif;
   --font-sans: var(--font-franklin), Arial, sans-serif;
@@ -26,15 +25,7 @@ body {
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-copper);
+  outline: 3px solid var(--color-accent);
   outline-offset: 3px;
 }
 
-/* Výrobní štítek: nýty v rozích jako na typovém štítku jednotky */
-.plate {
-  background-image:
-    radial-gradient(circle at 14px 14px, #9aa3a8 3px, transparent 3.5px),
-    radial-gradient(circle at calc(100% - 14px) 14px, #9aa3a8 3px, transparent 3.5px),
-    radial-gradient(circle at 14px calc(100% - 14px), #9aa3a8 3px, transparent 3.5px),
-    radial-gradient(circle at calc(100% - 14px) calc(100% - 14px), #9aa3a8 3px, transparent 3.5px);
-}

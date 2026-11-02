@@ -43,7 +43,7 @@ export function Drobecky({ kroky }: { kroky: Krok[] }) {
             <li key={k.href} className="flex gap-x-2">
               {i > 0 && <span aria-hidden>/</span>}
               {i < vse.length - 1 ? (
-                <Link href={k.href} className="underline underline-offset-4 hover:text-copper">
+                <Link href={k.href} className="underline underline-offset-4 hover:text-accent">
                   {k.label}
                 </Link>
               ) : (

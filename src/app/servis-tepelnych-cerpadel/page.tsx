@@ -94,7 +94,7 @@ export default function Servis() {
                 <summary className="cursor-pointer list-none font-display text-xl font-semibold marker:hidden sm:text-2xl">
                   <span className="flex items-start justify-between gap-6">
                     {d.q}
-                    <span aria-hidden className="text-copper group-open:rotate-45">
+                    <span aria-hidden className="text-accent group-open:rotate-45">
                       +
                     </span>
                   </span>
@@ -105,7 +105,7 @@ export default function Servis() {
           </div>
           <p className="mt-10 text-lg">
             Chystáte nové čerpadlo?{" "}
-            <Link href="/montaz-tepelnych-cerpadel" className="font-semibold text-copper underline underline-offset-4">
+            <Link href="/montaz-tepelnych-cerpadel" className="font-semibold text-accent underline underline-offset-4">
               Montáž tepelných čerpadel
             </Link>
           </p>
