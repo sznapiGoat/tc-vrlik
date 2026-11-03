@@ -7,9 +7,10 @@ import { fotky } from "@/lib/site";
 const SLIDE_MS = 7000;
 
 const SLIDES = [
-  { ...fotky.novostavba, tag: "Novostavba", focus: "50% 45%" },
+  // Začíná technickou místností: měď a bojler jsou zajímavější než bílá krabice za nadpisem
+  { ...fotky.zasobnik, tag: "Technická místnost", focus: "62% 40%" },
   { ...fotky.uVchodu, tag: "Rodinný dům", focus: "60% 50%" },
-  { ...fotky.zasobnik, tag: "Technická místnost", focus: "50% 42%" },
+  { ...fotky.novostavba, tag: "Novostavba", focus: "50% 45%" },
   { ...fotky.vyklenek, tag: "Fasáda", focus: "45% 50%" },
 ];
 
