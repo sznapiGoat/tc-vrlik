@@ -8,6 +8,7 @@
   --color-accent: #2c5f86;
   --color-accent-dark: #224a69;
   --color-deep: #1d405b;
+  --color-accent-light: #7fb0d8;
 
   --font-display: var(--font-franklin), Arial, sans-serif;
   --font-sans: var(--font-franklin), Arial, sans-serif;
@@ -161,4 +162,13 @@ body {
   to {
     stroke-dashoffset: -22;
   }
+}
+
+/* Nadpis hera: první řádek podtržený světlou modrou linkou, jen jako čára, ne text */
+.linka {
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent-light);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.17em;
+  text-decoration-skip-ink: none;
 }

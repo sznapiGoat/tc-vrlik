@@ -14,7 +14,7 @@ export function Header() {
           </svg>
           <span>
             <span className="block font-display text-2xl font-extrabold tracking-tight">Vrlík</span>
-            <span className="block text-base text-white/60">tepelná čerpadla, Šenov</span>
+            <span className="block text-sm whitespace-nowrap text-white/60 sm:text-base">tepelná čerpadla, Šenov</span>
           </span>
         </Link>
         <nav aria-label="Hlavní" className="hidden items-center gap-8 text-lg md:flex">

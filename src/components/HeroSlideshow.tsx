@@ -99,7 +99,7 @@ export function HeroSlideshow() {
         })}
 
         {/* Ztmavení pod textem: zespodu na mobilu, zleva na desktopu */}
-        <div className="absolute inset-0 z-[2] bg-linear-to-t from-ink/95 via-ink/70 to-ink/40 lg:bg-linear-to-r lg:from-ink/95 lg:from-25% lg:via-ink/70 lg:via-50% lg:to-ink/10" />
+        <div className="absolute inset-0 z-[2] bg-linear-to-t from-ink/95 via-ink/70 to-ink/40 lg:bg-linear-to-r lg:from-ink/90 lg:from-20% lg:via-ink/55 lg:via-50% lg:to-ink/0" />
       </div>
 
       <p className="sr-only" aria-live={running ? "off" : "polite"}>

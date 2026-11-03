@@ -44,7 +44,7 @@ function Znacka({ x, y, n }: { x: number; y: number; n: number }) {
 
 export function Schema() {
   return (
-    <section className="bg-deep text-white">
+    <section id="jak-funguje" className="scroll-mt-4 bg-deep text-white">
       <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 md:py-28">
         <div className="reveal max-w-2xl">
           <h2 className="font-display text-4xl leading-[1.05] font-extrabold tracking-tight sm:text-5xl">

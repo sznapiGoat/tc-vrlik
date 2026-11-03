@@ -9,11 +9,10 @@ export const metadata = {
   alternates: { canonical: "/" },
 };
 
-const stitek = [
-  ["Provozuje", firma.jmeno],
-  ["V oboru od", String(firma.odRoku)],
-  ["Značka", "Fujitsu vzduch-voda"],
-  ["Působí", "Šenov, Ostrava a okolí"],
+const duvody = [
+  ["Přes 30 let v oboru", `Řemeslo dělám od roku ${firma.odRoku}, sídlo mám v Šenově.`],
+  ["Fujitsu s hydromodulem", "Na tuhle značku se specializuji, montáž i servis."],
+  ["Přijedu k vám", "Šenov, Ostrava a okolní obce. Domluvíme se po telefonu."],
 ];
 
 const vyber = [fotky.uVchodu, fotky.zasobnik, fotky.konzole];
@@ -24,13 +23,14 @@ export default function Home() {
       <section className="relative isolate flex min-h-[calc(100svh-7.5rem)] flex-col overflow-hidden bg-ink text-white md:min-h-[min(calc(100svh-5.5rem),820px)]">
         <HeroSlideshow />
         <div className="relative z-[5] mx-auto flex w-full max-w-6xl flex-1 flex-col justify-end px-5 pt-40 pb-44 sm:px-8 md:pb-32 lg:justify-center lg:pt-24 lg:pb-36">
-          <div className="max-w-3xl">
-            <h1 className="hero-in font-display text-[2.75rem] leading-[1.04] font-extrabold tracking-tight sm:text-6xl lg:text-[3.6rem]">
-              Tepelná čerpadla Fujitsu <br className="hidden lg:block" />
-              v&nbsp;Šenově a&nbsp;okolí
+          <div className="max-w-[58rem]">
+            <h1 className="hero-in font-display text-[2.6rem] leading-[1.12] font-black tracking-tight [text-shadow:0_2px_24px_rgb(0_0_0/0.4)] sm:text-6xl lg:text-[3.75rem]">
+              <span className="linka">Servis tepelných čerpadel</span>
+              <br />
+              Fujitsu v&nbsp;Šenově a&nbsp;okolí
             </h1>
-            <p className="hero-in hero-in-2 mt-7 max-w-lg text-xl text-white/75 sm:text-[1.375rem]">
-              Servis, návrh a montáž čerpadel vzduch-voda. {firma.jmeno}, v oboru přes třicet let.
+            <p className="hero-in hero-in-2 mt-7 max-w-xl text-xl text-white/90 [text-shadow:0_1px_12px_rgb(0_0_0/0.45)] sm:text-[1.375rem]">
+              Návrh, montáž a pravidelná údržba čerpadel vzduch‑voda. Voláte rovnou Jiřímu Vrlíkovi.
             </p>
             <div className="hero-in hero-in-3 mt-10 flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-8">
               <a
@@ -40,30 +40,28 @@ export default function Home() {
                 Zavolat {firma.tel}
               </a>
               <a
-                href={`mailto:${firma.email}`}
-                className="text-lg text-white/85 underline decoration-white/30 underline-offset-4 hover:decoration-white"
+                href="#jak-funguje"
+                className="inline-flex items-center justify-center rounded-md border-2 border-white/70 px-7 py-[1.1rem] font-display text-xl font-bold text-white transition-colors hover:border-white hover:bg-white/10"
               >
-                {firma.email}
+                Jak čerpadlo funguje
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      <section aria-label="Základní údaje" className="bg-ink text-white">
-        <div className="border-t border-white/15">
-          <dl className="mx-auto grid max-w-6xl grid-cols-2 px-5 sm:px-8 lg:grid-cols-4">
-            {stitek.map(([k, v], i) => (
-              <div
-                key={k}
-                className={`py-6 pr-4 ${i % 2 ? "border-l border-white/15 pl-5" : ""} ${i === 2 ? "border-t border-white/15 lg:border-t-0 lg:border-l lg:pl-5" : ""} ${i === 3 ? "border-t border-white/15 lg:border-t-0" : ""}`}
-              >
-                <dt className="text-base text-white/60">{k}</dt>
-                <dd className="mt-1 font-display text-xl font-bold sm:text-2xl">{v}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
+      <section aria-label="Proč volat mně" className="bg-ink text-white">
+        <dl className="mx-auto grid max-w-6xl px-5 sm:px-8 md:grid-cols-3">
+          {duvody.map(([tvrzeni, detail], i) => (
+            <div
+              key={tvrzeni}
+              className={`py-7 md:py-9 ${i > 0 ? "border-t border-white/15 md:border-t-0 md:border-l md:pl-8" : ""} ${i < 2 ? "md:pr-8" : ""}`}
+            >
+              <dt className="font-display text-2xl font-extrabold tracking-tight">{tvrzeni}</dt>
+              <dd className="mt-2 text-white/70">{detail}</dd>
+            </div>
+          ))}
+        </dl>
       </section>
 
       {/* Servis: hlavní služba, proto nejvíc místa a fotka */}
